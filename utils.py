@@ -186,6 +186,60 @@ def inject_css(theme: str, presentation_mode: bool = False) -> None:
             background-color: {p['panel']};
             border-right: 1px solid {p['border']};
         }}
+        /* Native Streamlit text follows Streamlit's own theme, not ours: force readable colors */
+        .stApp h1, .stApp h2, .stApp h3, .stApp h4, .stApp h5, .stApp h6,
+        .stApp [data-testid="stMarkdownContainer"],
+        .stApp [data-testid="stWidgetLabel"],
+        .stApp [data-testid="stWidgetLabel"] p,
+        .stApp label, .stApp label p,
+        .stApp [data-testid="stExpander"] summary,
+        .stApp [data-testid="stMetricLabel"],
+        .stApp [data-testid="stMetricValue"],
+        .stApp [data-testid="stText"],
+        .stApp [data-testid="stTable"],
+        .stApp button[data-baseweb="tab"] p,
+        section[data-testid="stSidebar"] * {{
+            color: {p['text']};
+        }}
+        .stApp [data-testid="stCaptionContainer"],
+        .stApp [data-testid="stCaptionContainer"] p,
+        .stApp small {{
+            color: {p['muted']};
+        }}
+        .stApp button[data-baseweb="tab"][aria-selected="true"] p {{
+            color: {p['accent']};
+            font-weight: 700;
+        }}
+        /* Inputs, select boxes and their dropdown menus */
+        .stApp div[data-baseweb="select"] > div,
+        .stApp div[data-baseweb="input"] > div,
+        .stApp input, .stApp textarea {{
+            background-color: {p['panel']};
+            color: {p['text']};
+            border-color: {p['border']};
+        }}
+        .stApp div[data-baseweb="select"] span,
+        .stApp div[data-baseweb="select"] svg,
+        .stApp div[data-baseweb="tag"] span {{
+            color: {p['text']};
+            fill: {p['text']};
+        }}
+        div[data-baseweb="popover"] ul, div[data-baseweb="popover"] li {{
+            background-color: {p['panel']};
+            color: {p['text']};
+        }}
+        .stApp [data-testid="stHeader"] {{
+            background-color: {p['bg']};
+        }}
+        .stApp .stButton button, .stApp .stDownloadButton button {{
+            background-color: {p['panel']};
+            color: {p['text']};
+            border: 1px solid {p['border']};
+        }}
+        .stApp .stButton button:hover {{
+            border-color: {p['accent']};
+            color: {p['accent']};
+        }}
         div[data-testid="stMetric"], .kpi-card {{
             background: linear-gradient(145deg, {p['panel']}, {p['bg']});
             border: 1px solid {p['border']};

@@ -8,7 +8,7 @@ Run with:  streamlit run app.py
 Ties together data.py, indicators.py, signals.py, analytics.py,
 portfolio.py and charts.py into a Bloomberg/TradingView-inspired
 Streamlit interface, plus a dedicated Backtesting Results page for
-academic (Master's Capstone) presentation.
+academic (Bachelor's Capstone) presentation.
 """
 
 from __future__ import annotations
@@ -257,7 +257,7 @@ with tabs[0]:
 # TAB 2 — BACKTESTING RESULTS (Academic Presentation Mode)
 # ==========================================================================
 with tabs[1]:
-    st.markdown('<div class="section-title">📊 Backtesting Results — Master\'s Capstone Research</div>',
+    st.markdown('<div class="section-title">📊 Backtesting Results — Bachelor\'s Capstone Research</div>',
                 unsafe_allow_html=True)
     st.caption(
         "Simplified illustrative backtester: long/flat positioning, same-bar execution, "
